@@ -1,9 +1,21 @@
 'use strict';
-
+var fireballSize = 22;
+var getFireballSpeed = function (left) {
+  return left ? 5 : 2;
+};
+var wizardSpeed = 3;
+var wizardWidth = 70;
+var getWizardHeight = function () {
+  return 1.337 * wizardWidth
+};
+var getWizardX = function (width) {
+  return (width - wizardWidth) / 2;
+};
+var getWizardY = function (height) {
+  return (height - wizardWidth) * 2 / 3;
+}
 window.renderStatistics = function (ctx, names, times) {
-
     var players = createPlayers(names, times);
-
     ctx.fillStyle = 'rgba(256, 256, 256, 1.0)';
     ctx.fillRect(100, 10, 420, 270);
     ctx.strokeRect(100, 10, 420, 270);
